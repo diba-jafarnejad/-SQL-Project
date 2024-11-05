@@ -60,12 +60,19 @@ Again, some cities are not specified in the database. but we can see that most p
 
 
 SQL Queries:
+SELECT a_s.city, a_s.country, a_s.v2_product_name AS product_name, SUM(p.ordered_quantity) AS number_of_orders_per_product
+FROM all_sessions AS a_s
+INNER JOIN Products AS p ON a_s.product_sku = p.sku
+WHERE p.ordered_quantity IS NOT NULL
+GROUP BY a_s.city, a_s.country, a_s.v2_product_name
+ORDER BY number_of_orders_per_product DESC;
+
 
 
 
 Answer:
 
-
+product quantity is missing in all_sessions TABLE. SO using join with the Products table. we see that the top selling product is in the USA for YouTube Custom Decals.
 
 
 
