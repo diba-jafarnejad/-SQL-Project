@@ -6,9 +6,14 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 SQL Queries:
 
+SELECT city, country, transaction_revenue
+FROM all_sessions
+WHERE transaction_revenue IS NOT NULL
+ORDER BY transaction_revenue
 
 
-Answer:
+Answer: not many data is avaibale as transaction_revenue in most cases is null. Few rows have transaction_revenue
+available for which only one city name is available. The country with highest transaction revenue is USA.
 
 
 
