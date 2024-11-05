@@ -80,10 +80,14 @@ product quantity is missing in all_sessions TABLE. SO using join with the Produc
 
 SQL Queries:
 
-
+SELECT city, country, SUM(total_transaction_revenue) AS total_revenue, AVG(total_transaction_revenue) AS average_revenue, MIN(total_transaction_revenue) AS min_revenue, MAX(total_transaction_revenue) AS max_revenue
+FROM all_sessions 
+WHERE total_transaction_revenue IS NOT NULL
+GROUP BY city, country
+ORDER BY total_revenue DESC;
 
 Answer:
-
+Again, some city names are missing in the database. the result shows that United States has the most total revenue and Zurich, Switzerland has the least total_revenue. the total_transaction_revenue cloumn also has null values for manu rows so the result we see might not be the most accurate one.
 
 
 
