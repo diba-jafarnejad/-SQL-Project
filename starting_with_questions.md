@@ -39,11 +39,19 @@ Many rows have NULL values in product_quantity, which affects the final results 
 
 
 SQL Queries:
+-- Cleaning
+UPDATE all_sessions
+SET v2_product_category = '(not set)'
+WHERE v2_product_category = '${escCatTitle}'
 
-
+SELECT city, country, v2_product_category AS product_category, COUNT(*) AS number_of_orders_per_category
+FROM all_sessions
+WHERE v2_product_category != '(not set)' AND city != '(not set)' AND country != '(not set)'
+GROUP BY city, country, v2_product_category
+ORDER BY number_of_orders_per_category DESC;
 
 Answer:
-
+Again, some cities are not specified in the database. but we can see that most people in the US order Home/Shop by Brand/YouTube/ and Home/Apparel/Men's/Men's-T-Shirts/.
 
 
 
