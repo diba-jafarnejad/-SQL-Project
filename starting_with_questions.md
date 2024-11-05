@@ -23,10 +23,14 @@ available for which only one city name is available. The country with highest tr
 
 SQL Queries:
 
-
+SELECT city, country, FLOOR(AVG(product_quantity)) AS avg_product_ordered
+FROM all_sessions
+GROUP BY city, country
+HAVING AVG(product_quantity) IS NOT NULL
 
 Answer:
 
+Many rows have NULL values in product_quantity, which affects the final results by producing averages that are NULL. To address this, I added HAVING AVG(product_quantity) IS NOT NULL to filter out rows where the average product ordered is NULL. Additionally, some rows lack city names, which leads to incomplete data, making the results less reliable for decision-making or analysis.
 
 
 
