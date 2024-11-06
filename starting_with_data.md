@@ -15,6 +15,8 @@ Answer:
 "YouTube Custom Decals"	with 211 views
 "YouTube Men's Short Sleeve Hero Tee Black"	with 197 views
 
+This allows the company to see which products are best sellers and people have most interest in.
+
 
 Question 2: 
 
