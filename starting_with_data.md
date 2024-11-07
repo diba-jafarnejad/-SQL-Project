@@ -18,13 +18,26 @@ Answer:
 This allows the company to see which products are best sellers and people have most interest in.
 
 
-Question 2: 
+Question 2: How many repeat visitors are there, and which city/country do they come from?
 
-SQL Queries:
+SQL Queries: 
+SELECT count(*) AS total_number_of_repeated_visitors
+FROM (
+SELECT full_visitor_id, city, country, COUNT (full_visitor_id) AS visits
+FROM all_sessions
+GROUP BY full_visitor_id, city, country
+HAVING COUNT (full_visitor_id) > 1
+ORDER BY full_visitor_id ASC)
 
 Answer:
+The inner subqueries returns the city, country and the visitor id and number of visits they made. The entire query returns 773 which means total of 773 visitors have visited the site again.
 
+To check the acurracy of this query, I ran one of the result to see if the result is correct.
 
+-- to check the answer is right:
+SELECT full_visitor_id, city, country
+FROM all_sessions
+WHERE full_visitor_id = 5308587084747813
 
 Question 3: 
 
