@@ -4,7 +4,7 @@ What issues will you address by cleaning the data?
 
 Issue: The analytics table contained exact duplicate rows, which prevented establishing primary and foreign keys. Duplicate rows could lead to inflated metrics and incorrect analysis.
 
-Solution: We used ROW_NUMBER() and the ctid column (a unique identifier for each row) to identify and delete duplicates. An index was also created to speed up this process, but the query was initially slow due to the lack of primary keys.
+Solution: I used ROW_NUMBER() and the ctid column (a unique identifier for each row) to identify and delete duplicates. An index was also created to speed up this process, but the query was initially slow due to the lack of primary keys.
 
 ---
 ### 2. Managing Null Values in revenue:
