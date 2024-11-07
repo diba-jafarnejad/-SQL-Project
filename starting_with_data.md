@@ -52,6 +52,7 @@ ORDER BY average_time_in_minutes DESC
 Answer:
 some of the data in the time column is null - to clean the data added the HAVING condition.
 And to make it more readble, I changed the seconds to mins
+Visitors from Japan have the most average time spent on the site with 39.70 minutes.
 
 
 Question 4: 
