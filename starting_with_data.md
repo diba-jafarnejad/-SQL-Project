@@ -23,7 +23,9 @@ Question 2: How many repeat visitors are there, and which city/country do they c
 
 SQL Queries: 
 ```
+-- the main query counts the number of repeated visitors 
 SELECT count(*) AS total_number_of_repeated_visitors
+-- this inner query retrieves rows of repeated visitors
 FROM (
 SELECT full_visitor_id, city, country, COUNT (full_visitor_id) AS visits
 FROM all_sessions
