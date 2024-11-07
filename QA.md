@@ -4,6 +4,8 @@ What are your risk areas? Identify and describe them.
 
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
+
+
 ###Data Completeness and Consistency:
 Missing, inconsistent, or incomplete data can lead to skewed or inaccurate results, particularly if key fields like city, country, or v2_product_category are not consistently populated.
 
