@@ -39,12 +39,19 @@ SELECT full_visitor_id, city, country
 FROM all_sessions
 WHERE full_visitor_id = 5308587084747813
 
-Question 3: 
+Question 3: What is the average time spent on the site by visitors from each city?
 
 SQL Queries:
 
-Answer:
+SELECT city, country, (AVG(time_on_site) / 60)::numeric(10, 2) AS average_time_in_minutes
+FROM all_sessions
+GROUP BY city, country
+HAVING (AVG(time_on_site) / 60)::numeric(10, 2) IS NOT NULL
+ORDER BY average_time_in_minutes DESC
 
+Answer:
+some of the data in the time column is null - to clean the data added the HAVING condition.
+And to make it more readble, I changed the seconds to mins
 
 
 Question 4: 
